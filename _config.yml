@@ -1,0 +1,8 @@
+title: tkrpiano
+description: >-
+ tkrpiano's website
+baseurl: ""
+url: "https://tkrpiano.github.io"
+theme: null
+plugins:
+  - jekyll-redirect-from
