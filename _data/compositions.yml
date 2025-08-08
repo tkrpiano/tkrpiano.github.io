@@ -1,13 +1,29 @@
-- category: Mandarin
-  artist:   Eric Chou
-  song:     Laaa
-  url:      /mandarin/eric-chou/laaa/
-  piece:    /assets/compositions/mandarin/eric-chou/laaa
-  order:    2
+- category: Cantonese
+  artist:   Gareth T
+  song:     HII
+  summary:  >
+    Very easy.
+  url:      /cantonese/gareth-t/HII
+  mscz:     /assets/compositions/cantonese/gareth-t/HII.mscz
+  pdf:      /assets/compositions/cantonese/gareth-t/HII.pdf
+  order:    3
 
 - category: Mandarin
   artist:   Jay Chou
-  song:     Lol
-  url:      /mandarin/jay-chou/lol/
-  piece:    /assets/compositions/mandarin/jay-chou/laaa
+  song:     Love
+  summary:  >
+    Very easy.
+  url:      /mandarin/jay-chou/love
+  mscz:     /assets/compositions/mandarin/jay-chou/love.mscz
+  pdf:      /assets/compositions/mandarin/jay-chou/love.pdf
+  order:    2
+
+- category: Others
+  artist:   ICDD
+  song:     Yomi yori kikoyu, koukoku no hi to honoo no shoujo.
+  summary:  >
+    Very difficult!
+  url:      /others/icdd/yomi/
+  mscz:     /assets/compositions/others/icdd/yomi-yori.mscz
+  pdf:      /assets/compositions/others/icdd/yomi-yori.pdf
   order:    1
