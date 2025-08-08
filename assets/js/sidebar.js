@@ -1,6 +1,6 @@
 // Accordion 
-function show_sidebar_header(num1, num2) {
-  var x = document.getElementById("sidebar-header-"+num1+"-"+num2);
+function show_sidebar_submenu(num1, num2) {
+  var x = document.getElementById("sidebar-submenu-"+num1+"-"+num2);
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
   } else {
