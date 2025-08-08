@@ -1,0 +1,48 @@
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-wide"><b>tkr</b></h3>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a onclick="myAccFunc(0)" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Piano <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAcc-0" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"> Cantonese <i class="fa fa-caret-down w3-margin-right"></i></a>
+      <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button">Gareth T</a>
+      <a href="#" class="w3-bar-item w3-button">MC 張天賦</a>
+      <a href="#" class="w3-bar-item w3-button">Cloud 雲浩影</a>
+      <a href="#" class="w3-bar-item w3-button">TBC</a>
+      </div>
+      
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"> Mandarin <i class="fa fa-caret-down w3-margin-right"></i></a>
+      <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button">Jay Chou</a>
+      <a href="#" class="w3-bar-item w3-button">Eric Chou</a>
+      <a href="#" class="w3-bar-item w3-button">TBC</a>
+      </div>
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"> Others <i class="fa fa-caret-down w3-margin-right"></i></a>
+      <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button">ICDD</a>
+      <a href="#" class="w3-bar-item w3-button">Uncategorised</a>
+      </div>
+    </div>
+  
+    <a onclick="myAccFunc(1)" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Drawings <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAcc-1" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button">Anime</a>
+      <a href="#" class="w3-bar-item w3-button">Realism</a>
+      <a href="#" class="w3-bar-item w3-button">Others</a>
+    </div>
+  </div>
+  <a href="#footer" class="w3-bar-item w3-button w3-padding">Instagram</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">YouTube</a> 
+  <a href="#footer"  class="w3-bar-item w3-button w3-padding">Spotify</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
