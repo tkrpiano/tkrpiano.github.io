@@ -1,15 +1,12 @@
 // Accordion 
-function myAccFunc(num) {
-  var x = document.getElementById("demoAcc-"+num);
+function show_sidebar_header(num1, num2) {
+  var x = document.getElementById("sidebar-header-"+num1+"-"+num2);
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
   } else {
     x.className = x.className.replace(" w3-show", "");
   }
 }
-
-// Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
 
 // Open and close sidebar
 function w3_open() {
