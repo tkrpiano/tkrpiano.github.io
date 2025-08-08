@@ -1,0 +1,13 @@
+- category: Mandarin
+  artist:   Eric Chou
+  song:     Laaa
+  url:      /mandarin/eric-chou/laaa/
+  piece:    /assets/compositions/mandarin/eric-chou/laaa
+  order:    2
+
+- category: Mandarin
+  artist:   Jay Chou
+  song:     Lol
+  url:      /mandarin/jay-chou/lol/
+  piece:    /assets/compositions/mandarin/jay-chou/laaa
+  order:    1
