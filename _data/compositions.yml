@@ -1,29 +1,33 @@
 Cantonese:
   Gareth T:
-    - song: HII
+    - song: 你都不知道 自己有多好
+      file: 你都不知道-自己有多好
+      date: 2025-08-09
       summary: >
         Very easy.
-      url:  /cantonese/gareth-t/HII/
-      mscz: /assets/compositions/cantonese/gareth-t/HII.mscz
-      pdf:  /assets/compositions/cantonese/gareth-t/HII.pdf
-      date: 2025-08-09
 
-Mandarin:
-  Jay Chou:
-    - song: Love
-      summary:  >
-        Very easy.
-      url:  /mandarin/jay-chou/love/
-      mscz: /assets/compositions/mandarin/jay-chou/love.mscz
-      pdf:  /assets/compositions/mandarin/jay-chou/love.pdf
+    - song: 國際孤獨等級
+      file: 國際孤獨等級
       date: 2025-08-08
+      summary: >
+        Easy.
+
+    - song: 用背脊唱情歌
+      file: 用背脊唱情歌
+      date: 2025-08-05
+      summary: >
+        Medium.
 
 Others:
   ICDD:
     - song: Yomi yori kikoyu, koukoku no hi to honoo no shoujo.
-      summary:  >
-        Very difficult!
-      url:  /others/icdd/yomi/
-      mscz: /assets/compositions/others/icdd/yomi-yori.mscz
-      pdf:  /assets/compositions/others/icdd/yomi-yori.pdf
+      file: yomi-yori
       date: 2025-08-07
+      summary: >
+        Very difficult!
+
+    - song: Uta
+      file: uta
+      date: 2025-09-05
+      summary: >
+        Very difficult!

@@ -1,0 +1,38 @@
+name: Build PDF thumbnails
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  thumbs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install converters
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils imagemagick
+
+      - name: Generate page-1 JPG thumbnails
+        run: |
+          shopt -s nullglob
+          for pdf in assets/compositions/**/*.pdf; do
+            base="${pdf%.*}"
+            out="${base}.thumb.jpg"
+            # (Re)build if missing or PDF is newer
+            if [ ! -f "$out" ] || [ "$pdf" -nt "$out" ]; then
+              echo "-> $out"
+              # 1) render first page to jpg (1200px tall-ish)
+              pdftoppm -jpeg -f 1 -l 1 -scale-to 1200 "$pdf" "${base}.thumb"
+              # 2) normalize: white bg, strip metadata, moderate quality
+              mogrify -background white -alpha remove -alpha off -strip -quality 85 "$out"
+            fi
+          done
+
+      - name: Commit thumbnails
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Build PDF thumbnails"
+          file_pattern: "assets/compositions/**/*.thumb.jpg"
