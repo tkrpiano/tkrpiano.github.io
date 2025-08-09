@@ -1,3 +1,6 @@
+{%- assign current_url = page.url | append:'/' | replace:'//','/' -%}
+{%- assign compositions = site.data.compositions -%}
+
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
@@ -5,44 +8,41 @@
     <h3 class="w3-wide"><b>tkr</b></h3>
   </div>
   <div class="w3-padding-64 w3-large w3-text-grey">
-    <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="/" class="w3-bar-item w3-button {% if current_url == '/' %}w3-light-grey{% endif %}">Home</a>
 
-    <a href="/cantonese/" class="w3-button w3-block w3-white w3-left-align" style="position:relative; padding-right:2.5em">
-      Cantonese
-      <i class="fa fa-caret-down"
-         style="position:absolute;top:0;right:0;width:2.5em;height:100%;display:flex;align-items:center;justify-content:center;cursor:pointer;"
-         onclick="event.preventDefault(); event.stopPropagation(); show_sidebar_submenu(1,0)">
-      </i>
-    </a>
-    <div id="sidebar-submenu-1-0" class="w3-bar-block w3-hide w3-padding w3-medium">
-      <a href="/cantonese/gareth-t/" class="w3-bar-item w3-button">Gareth T</a>
-      <a href="/cantonese/MC-張天賦/" class="w3-bar-item w3-button">MC 張天賦</a>
-      <a href="/cantonese/Cloud-雲浩影/" class="w3-bar-item w3-button">Cloud 雲浩影</a>
-    </div>
+    {%- for category_artist in compositions -%}
+      {%- assign category = category_artist[0] -%}
+      {%- assign artists  = category_artist[1] -%}
+      {%- assign category_slug = category | slugify -%}
+      {%- assign category_url = '/' | append: category_slug | append: '/' -%}
 
-    <a href="/mandarin/" class="w3-button w3-block w3-white w3-left-align" style="position:relative; padding-right:2.5em">
-      Mandarin
-      <i class="fa fa-caret-down" 
-         style="position:absolute;top:0;right:0;width:2.5em;height:100%;display:flex;align-items:center;justify-content:center;cursor:pointer;"
-         onclick="event.preventDefault(); event.stopPropagation(); show_sidebar_submenu(2,0)">
-      </i>
-    </a>
-    <div id="sidebar-submenu-2-0" class="w3-bar-block w3-hide w3-padding w3-medium">
-      <a href="/mandarin/jay-chou/" class="w3-bar-item w3-button">Jay Chou</a>
-      <a href="/mandarin/eric-chou/" class="w3-bar-item w3-button">Eric Chou</a>
-    </div>
+      <!-- Category row -->
+      <a href="/{{ category_slug }}/"
+        class="w3-button w3-block w3-white w3-left-align {% if current_url == category_url %}w3-light-grey{% endif %}"
+        style="position:relative; padding-right:3em">
+        {{ category }}
+        <i class="fa fa-caret-down"
+          style="position:absolute;top:0;right:0;width:2.5em;height:100%;display:flex;align-items:center;justify-content:center;cursor:pointer;"
+          onclick="event.preventDefault(); event.stopPropagation(); toggleSubmenu('category-{{ category_slug }}')">
+        </i>
+      </a>
 
-    <a href="/others/" class="w3-button w3-block w3-white w3-left-align" style="position:relative; padding-right:2.5em">
-      Others
-      <i class="fa fa-caret-down" 
-         style="position:absolute;top:0;right:0;width:2.5em;height:100%;display:flex;align-items:center;justify-content:center;cursor:pointer;"
-         onclick="event.preventDefault(); event.stopPropagation(); show_sidebar_submenu(3,0)">
-      </i>
-    </a>
-    <div id="sidebar-submenu-3-0" class="w3-bar-block w3-hide w3-padding w3-medium">
-      <a href="/others/icdd/" class="w3-bar-item w3-button">ICDD</a>
-      <a href="/others/uncategorised/" class="w3-bar-item w3-button">Uncategorised</a>
-    </div>
+      <!-- Category submenu -->
+      <div id="category-{{ category_slug }}"
+          class="w3-bar-block {% if current_url contains category_url %}w3-show{% else %}w3-hide{% endif %} w3-padding w3-medium">
+
+        {%- for artist_pair in artists -%}
+          {%- assign artist_name = artist_pair[0] -%}
+          {%- assign artist_slug = artist_name | slugify -%}
+          {%- assign artist_url = category_url | append: artist_slug | append: '/' -%}
+
+          <!-- Artist row -->
+          <a href="{{ artist_url }}" class="w3-bar-item w3-button {% if current_url == artist_url %}w3-light-grey{% endif %}">
+            {{ artist_name }}
+          </a>
+        {%- endfor -%}
+      </div>
+    {%- endfor -%}
   </div>
   <a href="https://www.instagram.com/tkr_piano/" target="_blank" class="w3-bar-item w3-button w3-padding">Instagram</a> 
   <a href="https://www.youtube.com/@tkrpiano" target="_blank" class="w3-bar-item w3-button w3-padding">YouTube</a> 

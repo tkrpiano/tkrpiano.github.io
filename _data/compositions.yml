@@ -1,29 +1,38 @@
-- category: Cantonese
-  artist:   Gareth T
-  song:     HII
-  summary:  >
-    Very easy.
-  url:      /cantonese/gareth-t/HII
-  mscz:     /assets/compositions/cantonese/gareth-t/HII.mscz
-  pdf:      /assets/compositions/cantonese/gareth-t/HII.pdf
-  order:    3
+Cantonese:
+  MC Chuengtinfu:
+    - song: LOL
+      summary: >
+        Lol
+      url:  /cantonese/mc-cheungtinfu/Lol
+      mscz: /assets/compositions/cantonese/mc-cheungtinfu/Lol.mscz
+      pdf:  /assets/compositions/cantonese/mc-cheungtinfu/Lol.pdf
+      date: 2025-08-09
 
-- category: Mandarin
-  artist:   Jay Chou
-  song:     Love
-  summary:  >
-    Very easy.
-  url:      /mandarin/jay-chou/love
-  mscz:     /assets/compositions/mandarin/jay-chou/love.mscz
-  pdf:      /assets/compositions/mandarin/jay-chou/love.pdf
-  order:    2
+  Gareth T:
+    - song: HII
+      summary: >
+        Very easy.
+      url:  /cantonese/gareth-t/HII
+      mscz: /assets/compositions/cantonese/gareth-t/HII.mscz
+      pdf:  /assets/compositions/cantonese/gareth-t/HII.pdf
+      date: 2025-08-09
 
-- category: Others
-  artist:   ICDD
-  song:     Yomi yori kikoyu, koukoku no hi to honoo no shoujo.
-  summary:  >
-    Very difficult!
-  url:      /others/icdd/yomi/
-  mscz:     /assets/compositions/others/icdd/yomi-yori.mscz
-  pdf:      /assets/compositions/others/icdd/yomi-yori.pdf
-  order:    1
+Mandarin:
+  Jay Chou:
+    - song: Love
+      summary:  >
+        Very easy.
+      url:  /mandarin/jay-chou/love
+      mscz: /assets/compositions/mandarin/jay-chou/love.mscz
+      pdf:  /assets/compositions/mandarin/jay-chou/love.pdf
+      date: 2025-08-08
+
+Others:
+  ICDD:
+    - song: Yomi yori kikoyu, koukoku no hi to honoo no shoujo.
+      summary:  >
+        Very difficult!
+      url:  /others/icdd/yomi/
+      mscz: /assets/compositions/others/icdd/yomi-yori.mscz
+      pdf:  /assets/compositions/others/icdd/yomi-yori.pdf
+      date: 2025-08-07

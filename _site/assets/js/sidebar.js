@@ -8,6 +8,13 @@ function show_sidebar_submenu(num1, num2) {
   }
 }
 
+function toggleSubmenu(id){
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('w3-show');
+  el.classList.toggle('w3-hide');
+}
+
 // Open and close sidebar
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";

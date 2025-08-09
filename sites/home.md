@@ -9,8 +9,8 @@ permalink: /
   <img src="/assets/img/jeans.jpg" alt="Jeans" style="width:100%">
 </div>
 
-<div class="w3-container w3-text-grey" id="jeans">
-  <p>8 items</p>
+<div class="w3-container" id="jeans">
+  <br><h5>Recent transcriptions</h5>
 </div>
 
 <!-- Product grid -->
