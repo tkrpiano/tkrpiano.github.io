@@ -6,7 +6,7 @@ permalink: /
 
 <!-- Image header -->
 <div class="w3-display-container w3-container">
-  <img src="/assets/img/jeans.jpg" alt="Jeans" style="width:100%">
+  <img src="/assets/img/home-page-crop.jpg" alt="Jeans" style="width:100%">
 </div>
 
 <div class="w3-container" id="jeans">
