@@ -1,18 +1,9 @@
 Cantonese:
-  MC Chuengtinfu:
-    - song: LOL
-      summary: >
-        Lol
-      url:  /cantonese/mc-cheungtinfu/Lol
-      mscz: /assets/compositions/cantonese/mc-cheungtinfu/Lol.mscz
-      pdf:  /assets/compositions/cantonese/mc-cheungtinfu/Lol.pdf
-      date: 2025-08-09
-
   Gareth T:
     - song: HII
       summary: >
         Very easy.
-      url:  /cantonese/gareth-t/HII
+      url:  /cantonese/gareth-t/HII/
       mscz: /assets/compositions/cantonese/gareth-t/HII.mscz
       pdf:  /assets/compositions/cantonese/gareth-t/HII.pdf
       date: 2025-08-09
@@ -22,7 +13,7 @@ Mandarin:
     - song: Love
       summary:  >
         Very easy.
-      url:  /mandarin/jay-chou/love
+      url:  /mandarin/jay-chou/love/
       mscz: /assets/compositions/mandarin/jay-chou/love.mscz
       pdf:  /assets/compositions/mandarin/jay-chou/love.pdf
       date: 2025-08-08
