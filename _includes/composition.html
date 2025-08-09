@@ -1,0 +1,14 @@
+{%- assign category      = page.category -%}
+{%- assign category_slug = category | slugify -%}
+{%- assign artist      = page.artist -%}
+{%- assign artist_slug = artist | slugify -%}
+{%- assign song         = page.title -%}
+{%- assign song_slug    = song | slugify -%}
+{%- assign meta         = site.data.compositions[category][artist][song] -%}
+{%- assign song_date    = meta.date -%}
+{%- assign song_summary = meta.summary -%}
+{%- assign file_url = category_slug | append: '/' | append: artist_slug | append: '/' | append: song_slug -%}
+{%- assign pdf_url  = '/assets/compositions/' | append: file_url | append: '.pdf' -%}
+{%- assign mscz_url = '/assets/compositions/' | append: file_url | append: '.mscz' -%}
+{%- assign img_url  = '/assets/compositions/' | append: file_url | append: '.jpg' -%}
+{%- assign page_url = '/' | append: file_url | append: '/' -%}

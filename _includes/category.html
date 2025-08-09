@@ -1,4 +1,3 @@
-<!-- Composition grid -->
 {%- assign category      = page.title -%}
 {%- assign category_slug = category | slugify -%}
 {%- assign artists_obj   = site.data.compositions[category] -%}
@@ -7,27 +6,40 @@
   {%- for art in artists_obj -%}
     {%- assign artist_name = art[0] -%}
     {%- assign artist_slug = artist_name | slugify -%}
-    {%- assign songs       = art[1] | sort: "date" | reverse -%}
+    {%- assign songs_map   = art[1] -%}
 
-    <div class="w3-container">
-      <br><h5>{{ artist_name }}</h5>
-    </div>
+    <div class="w3-container"><br><h5>{{ artist_name }}</h5></div>
 
-  <div class="w3-row-padding w3-grayscale">
-      {%- for s in songs limit:4 -%}
-        {%- assign file_url = category_slug | append:'/' | append:artist_slug | append:'/' | append:s.file -%}
-        {%- assign pdf_url  = '/assets/compositions/' | append:file_url | append: '.pdf' -%}
-        {%- assign img_url  = '/assets/compositions/' | append:file_url | append: '.jpg' -%}
-        {%- assign page_url = '/' | append:file_url | append:'/' -%}
+    {%- assign rows = "" | split: "" -%}
+    {%- for s in songs_map -%}
+      {%- assign song_title = s[0] -%}
+      {%- assign meta       = s[1] -%}
+      {%- assign song_slug  = song_title | slugify -%}
 
-        <div class="w3-col l3 s6 m6" style="margin-bottom:16px;">
-          <a href="{{ pdf_url }}" class="w3-card w3-white w3-hover-shadow" style="display:block; text-decoration:none;">
+      {%- assign file_url = category_slug | append:'/' | append:artist_slug | append:'/' | append:song_slug -%}
+      {%- assign pdf_url  = '/assets/compositions/' | append:file_url | append: '.pdf' -%}
+      {%- assign img_url  = '/assets/compositions/' | append:file_url | append: '.jpg' -%}
+
+      {%- assign row = meta.date | append:'||' | append:artist_name | append:'||' | append:song_title | append:'||' | append:pdf_url | append:'||' | append:img_url -%}
+      {%- assign rows = rows | push: row -%}
+    {%- endfor -%}
+    {%- assign rows = rows | sort | reverse -%}
+
+    <div class="w3-row-padding w3-grayscale">
+      {%- for row in rows limit:4 -%}
+        {%- assign p = row | split:'||' -%}
+        {%- assign artist = p[1] -%}
+        {%- assign song   = p[2] -%}
+        {%- assign pdf    = p[3] -%}
+        {%- assign img    = p[4] -%}
+        <div class="w3-col l3 m6 s6" style="margin-bottom:16px;">
+          <a href="{{ pdf }}" class="w3-card w3-white w3-hover-shadow" style="display:block; text-decoration:none;">
             <div class="thumb-box">
-              <img src="{{ img_url }}" alt="{{ artist_name }} — {{ s.song }}">
+              <img src="{{ img }}" alt="{{ artist }} — {{ song }}">
             </div>
             <div class="w3-container">
-              <p class="w3-small w3-text-grey truncate">{{ artist_name }}</p>
-              <p class="w3-medium truncate"><b>{{ s.song }}</b></p>
+              <p class="w3-small w3-text-grey truncate">{{ artist }}</p>
+              <p class="w3-medium truncate"><b>{{ song }}</b></p>
             </div>
           </a>
         </div>

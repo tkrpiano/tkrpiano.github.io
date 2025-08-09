@@ -1,7 +1,7 @@
 ---
 layout: default
 category: Others
-Artist: ICDD
+artist: ICDD
 title: Uta
 permalink: /others/icdd/uta/
 ---
