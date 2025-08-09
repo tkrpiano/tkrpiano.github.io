@@ -1,7 +1,7 @@
 .thumb-box{
   width:100%;
   aspect-ratio: 8.5/11;
-  background:#f7f7f7;
+  background:#fff;
   overflow:hidden;
 }
 .thumb-box img{
