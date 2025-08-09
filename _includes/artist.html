@@ -1,13 +1,11 @@
 <!-- Composition grid -->
 {%- assign items = "" | split: "" -%}
 
-{%- assign category      = page.title -%}
+{%- assign category      = page.category -%}
 {%- assign category_slug = category | slugify -%}
-{%- assign artists       = site.data.compositions[category] -%}
-
-{%- assign artist      = art[0] -%}
+{%- assign artist      = page.title -%}
 {%- assign artist_slug = artist | slugify -%}
-{%- assign songs       = art[1] -%}
+{%- assign songs       = site.data.compositions[category][artist] -%}
 {%- for song in songs -%}
   {%- assign file_url = category_slug | append: '/' | append: artist_slug | append: '/' | append: song.file -%}
   {%- assign pdf_url  = '/assets/compositions/' | append: file_url | append: '.pdf' -%}
@@ -25,11 +23,10 @@
   {%- assign items = items | push: row -%}
 {%- endfor -%}
 
-
 {%- assign items = items | sort | reverse -%}
 
 <div class="w3-row-padding w3-grayscale">
-  {%- for row in items limit:4 -%}
+  {%- for row in items -%}
     {%- assign parts    = row | split:'||' -%}
     {%- assign date     = parts[0] -%}
     {%- assign category = parts[1] -%}
