@@ -4,27 +4,27 @@
 {%- assign category      = page.title -%}
 {%- assign category_slug = category | slugify -%}
 {%- assign artists       = site.data.compositions[category] -%}
-{%- for art in artists -%}
-  {%- assign artist      = art[0] -%}
-  {%- assign artist_slug = artist | slugify -%}
-  {%- assign songs       = art[1] -%}
-  {%- for song in songs -%}
-    {%- assign file_url = category_slug | append: '/' | append: artist_slug | append: '/' | append: song.file -%}
-    {%- assign pdf_url  = '/assets/compositions/' | append: file_url | append: '.pdf' -%}
-    {%- assign mscz_url = '/assets/compositions/' | append: file_url | append: '.mscz' -%}
-    {%- assign img_url  = '/assets/compositions/' | append: file_url | append: '.jpg' -%}
-    {%- assign page_url = '/' | append: file_url | append: '/' -%}
-    {%- assign row = song.date | append: '||' | 
-             append: category  | append: '||' | 
-             append: artist    | append: '||' | 
-             append: song.song | append: '||' | 
-             append: pdf_url   | append: '||' |
-             append: mscz_url  | append: '||' |
-             append: img_url   | append: '||' |
-             append: page_url-%}
-    {%- assign items = items | push: row -%}
-  {%- endfor -%}
+
+{%- assign artist      = art[0] -%}
+{%- assign artist_slug = artist | slugify -%}
+{%- assign songs       = art[1] -%}
+{%- for song in songs -%}
+  {%- assign file_url = category_slug | append: '/' | append: artist_slug | append: '/' | append: song.file -%}
+  {%- assign pdf_url  = '/assets/compositions/' | append: file_url | append: '.pdf' -%}
+  {%- assign mscz_url = '/assets/compositions/' | append: file_url | append: '.mscz' -%}
+  {%- assign img_url  = '/assets/compositions/' | append: file_url | append: '.jpg' -%}
+  {%- assign page_url = '/' | append: file_url | append: '/' -%}
+  {%- assign row = song.date | append: '||' | 
+           append: category  | append: '||' | 
+           append: artist    | append: '||' | 
+           append: song.song | append: '||' | 
+           append: pdf_url   | append: '||' |
+           append: mscz_url  | append: '||' |
+           append: img_url   | append: '||' |
+           append: page_url-%}
+  {%- assign items = items | push: row -%}
 {%- endfor -%}
+
 
 {%- assign items = items | sort | reverse -%}
 
