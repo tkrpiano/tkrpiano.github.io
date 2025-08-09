@@ -45,7 +45,8 @@ permalink: /
     {%- assign pdf      = parts[4] -%}
     <div class="w3-col l3 s6">
       <a href="{{ pdf }}" class="w3-card w3-white w3-hover-shadow" style="display:block; text-decoration:none;">
-        {%- assign thumb = pdf | replace: '.pdf', '.thumb.jpg' -%}
+        {%- assign img_base = pdf | replace: '.pdf', '' -%}
+        {%- assign thumb = img_base | append: '.jpg' -%}
         <div class="thumb-box">
           <img src="{{ thumb }}" alt="{{ artist }} — {{ song }}">
         </div>

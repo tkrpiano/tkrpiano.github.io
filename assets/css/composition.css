@@ -1,2 +1,12 @@
-.thumb-box { width:100%; aspect-ratio: 8.5/11; background:#f7f7f7; }
-.thumb-box img { width:100%; height:100%; object-fit: contain; display:block; }
+.thumb-box{
+  width:100%;
+  aspect-ratio: 8.5/11;
+  background:#f7f7f7;
+  overflow:hidden;
+}
+.thumb-box img{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  display:block;
+}
