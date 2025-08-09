@@ -45,11 +45,9 @@ permalink: /
     {%- assign pdf      = parts[4] -%}
     <div class="w3-col l3 s6">
       <a href="{{ pdf }}" class="w3-card w3-white w3-hover-shadow" style="display:block; text-decoration:none;">
-        <div class="pdf-thumb">
-          <iframe
-            loading="lazy"
-            src="{{ pdf }}#page=1&view=FitH&toolbar=0&statusbar=0&messages=0&navpanes=0">
-          </iframe>
+        {%- assign thumb = pdf | replace: '.pdf', '.thumb.jpg' -%}
+        <div class="thumb-box">
+          <img src="{{ thumb }}" alt="{{ artist }} — {{ song }}">
         </div>
         <div class="w3-container">
           <p class="w3-small w3-text-grey">{{ artist }}</p>
