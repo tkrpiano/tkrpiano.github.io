@@ -4,3 +4,4 @@ title: Mandarin
 permalink: /mandarin/
 ---
 
+{% include category.html %}

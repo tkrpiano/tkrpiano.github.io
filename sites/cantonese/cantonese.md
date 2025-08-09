@@ -4,3 +4,4 @@ title: Cantonese
 permalink: /cantonese/
 ---
 
+{% include category.html %}
