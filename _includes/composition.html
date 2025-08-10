@@ -12,3 +12,20 @@
 {%- assign mscz_url = '/assets/compositions/' | append: file_url | append: '.mscz' -%}
 {%- assign img_url  = '/assets/compositions/' | append: file_url | append: '.jpg' -%}
 {%- assign page_url = '/' | append: file_url | append: '/' -%}
+
+<div class="w3-container">
+  <div class="pdf-container">
+    <iframe class="pdf-frame"
+            src="{{ pdf_url }}#zoom=page-fit&view=Fit&toolbar=1">
+    </iframe>
+  </div>
+
+  <div class="w3-section">
+    <p class="w3-small w3-text-grey">Date: {{ song_date }}</p>
+    <p>Description: {{ song_summary }}</p>
+    <p>Download:
+      <a href="{{ pdf_url }}" download>PDF</a> |
+      <a href="{{ mscz_url }}" download>MSCZ</a>
+    </p>
+  </div>
+</div>

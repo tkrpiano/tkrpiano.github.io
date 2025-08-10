@@ -4,38 +4,50 @@
 
 {%- if artists_obj -%}
   {%- for art in artists_obj -%}
-    {%- assign artist_name = art[0] -%}
-    {%- assign artist_slug = artist_name | slugify -%}
-    {%- assign songs_map   = art[1] -%}
-
-    <div class="w3-container"><br><h5>{{ artist_name }}</h5></div>
-
     {%- assign rows = "" | split: "" -%}
-    {%- for s in songs_map -%}
-      {%- assign song_title = s[0] -%}
-      {%- assign meta       = s[1] -%}
-      {%- assign song_slug  = song_title | slugify -%}
+    {%- assign artist = art[0] -%}
+    {%- assign artist_slug = artist | slugify -%}
+    {%- assign songs = art[1] -%}
 
-      {%- assign file_url = category_slug | append:'/' | append:artist_slug | append:'/' | append:song_slug -%}
-      {%- assign pdf_url  = '/assets/compositions/' | append:file_url | append: '.pdf' -%}
-      {%- assign img_url  = '/assets/compositions/' | append:file_url | append: '.jpg' -%}
-
-      {%- assign row = meta.date | append:'||' | append:artist_name | append:'||' | append:song_title | append:'||' | append:pdf_url | append:'||' | append:img_url -%}
+    <div class="w3-container"><br><h5>{{ artist }}</h5></div>
+    
+    {%- for s in songs -%}
+      {%- assign song = s[0] -%}
+      {%- assign song_slug = song | slugify -%}
+      {%- assign meta = s[1] -%}
+      {%- assign file_url = category_slug | append: '/' | append: artist_slug | append: '/' | append: song_slug -%}
+      {%- assign pdf_url  = '/assets/compositions/' | append: file_url | append: '.pdf' -%}
+      {%- assign mscz_url = '/assets/compositions/' | append: file_url | append: '.mscz' -%}
+      {%- assign img_url  = '/assets/compositions/' | append: file_url | append: '.jpg' -%}
+      {%- assign page_url = '/' | append: file_url | append: '/' -%}
+      {%- assign row = meta.date | append: '||' |
+               append: category  | append: '||' | 
+               append: artist    | append: '||' | 
+               append: song      | append: '||' | 
+               append: pdf_url   | append: '||' |
+               append: mscz_url  | append: '||' | 
+               append: img_url   | append: '||' | 
+               append: page_url -%}
       {%- assign rows = rows | push: row -%}
     {%- endfor -%}
+
     {%- assign rows = rows | sort | reverse -%}
 
     <div class="w3-row-padding w3-grayscale">
-      {%- for row in rows limit:4 -%}
-        {%- assign p = row | split:'||' -%}
-        {%- assign artist = p[1] -%}
-        {%- assign song   = p[2] -%}
-        {%- assign pdf    = p[3] -%}
-        {%- assign img    = p[4] -%}
+      {%- for row in rows limit: 4 -%}
+        {%- assign parts    = row | split: '||' -%}
+        {%- assign date     = parts[0] -%}
+        {%- assign category = parts[1] -%}
+        {%- assign artist   = parts[2] -%}
+        {%- assign song     = parts[3] -%}
+        {%- assign pdf_url  = parts[4] -%}
+        {%- assign mscz_url = parts[5] -%}
+        {%- assign img_url  = parts[6] -%}
+        {%- assign page_url = parts[7] -%}
         <div class="w3-col l3 m6 s6" style="margin-bottom:16px;">
-          <a href="{{ pdf }}" class="w3-card w3-white w3-hover-shadow" style="display:block; text-decoration:none;">
+          <a href="{{ page_url }}" class="w3-card w3-white w3-hover-shadow" style="display:block; text-decoration:none;">
             <div class="thumb-box">
-              <img src="{{ img }}" alt="{{ artist }} — {{ song }}">
+              <img src="{{ img_url }}" alt="{{ artist }} — {{ song }}">
             </div>
             <div class="w3-container">
               <p class="w3-small w3-text-grey truncate">{{ artist }}</p>
