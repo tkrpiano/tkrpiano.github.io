@@ -1,8 +1,8 @@
 ---
 layout: default
 category: Others
-title: Uncategorised
-permalink: /others/uncategorised
+title: Originals
+permalink: /others/originals
 ---
 
 {% include artist.html %}
