@@ -1,7 +1,7 @@
 ---
 layout: default
 category: Others
-artist: originals
+artist: Originals
 title: facade
 permalink: /others/originals/facade/
 ---
